@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewData["Title"] = "Calculator";
+}
+@model Calculator
+
+<h1>Calculator</h1>
+
+@*Calculator Form*@
+<form action="Calculate" method="post">
+    <input type="number" name="Number1" />
+    <label><input type="radio" name="Operator" value="+" /> +</label>
+    <label><input type="radio" name="Operator" value="-" /> -</label>
+    <label><input type="radio" name="Operator" value="*" /> *</label>
+    <label><input type="radio" name="Operator" value="/" /> /</label>
+    <input type="number" name="Number2" />
+
+    <input type="submit" value="Calculate" />
+</form>
+
+@*Calculator Result*@
+
+@if (Model != null)
+{
+<p>@Model.Number1 @Model.Operator @Model.Number2 = @Model.Result</p>
+}
